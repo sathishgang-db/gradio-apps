@@ -7,7 +7,9 @@ with gr.Blocks() as demo:
 
     with gr.Row():
         with gr.Column():
-            gr.Markdown("### Enter values for fields (hint 🦻: use any example for a quick demo):")
+            gr.Markdown(
+                "### Enter values for fields (hint 🦻: use any example for a quick demo):"
+            )
             inp = [
                 gr.Textbox(label="Machine ID", placeholder="What is the MacID?"),
                 gr.Textbox(label="Time ID", placeholder="What is the Time ID?"),
@@ -42,8 +44,16 @@ with gr.Blocks() as demo:
             ]
         with gr.Column():
             gr.Markdown("### Output populates below! 🏁")
-            out = gr.Textbox(label="Model Scoring Result", placeholder="Is this an anomaly?")
-            gr.Examples(list_of_examples, inputs=inp, outputs=out, fn=update, label="Click example to pre-fill fields(all are GT anomalies):")
+            out = gr.Textbox(
+                label="Model Scoring Result", placeholder="Is this an anomaly?"
+            )
+            gr.Examples(
+                list_of_examples,
+                inputs=inp,
+                outputs=out,
+                fn=update,
+                label="Click example to pre-fill fields(all are GT anomalies):",
+            )
             btn = gr.Button("Run")
     btn.click(fn=update, inputs=inp, outputs=out)
 

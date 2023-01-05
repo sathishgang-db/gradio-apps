@@ -1,0 +1,10 @@
+*.pt
+*.ckpt
+*.pyc
+settings.toml
+flagged/
+flagged/*
+gradio_cached_examples/
+gradio_cached_examples/*
+__pycache__/
+__pycache__/*
