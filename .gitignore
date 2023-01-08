@@ -8,3 +8,5 @@ gradio_cached_examples/
 gradio_cached_examples/*
 __pycache__/
 __pycache__/*
+propensity_ml.csv
+import.py
